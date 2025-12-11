@@ -54,7 +54,7 @@ public class SceneManager : MonoBehaviour
                 break;
             case "Jupiter":
                 // Load Jupiter scene
-                scenes[currentScene].setActive(false);
+                scenes[currentScene].SetActive(false);
                 scenes[3].SetActive(true);
                 break;
 
