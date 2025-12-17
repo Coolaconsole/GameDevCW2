@@ -109,6 +109,7 @@ MonoBehaviour:
   burnTime: 3
   spreadTime: 1
   fireRange: 1
+  burntObject: {fileID: 4453154900406229797, guid: a03755c6da92a00458511458211fc3b4, type: 3}
 --- !u!61 &823119962544425541
 BoxCollider2D:
   m_ObjectHideFlags: 0

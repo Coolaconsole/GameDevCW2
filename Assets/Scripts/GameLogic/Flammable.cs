@@ -15,6 +15,8 @@ public class Flammable : MonoBehaviour
     public float spreadTime = 3;
     //how many tiles away the fire will spread when spreadTime expires - recomend have equal to grid size
     public float fireRange = 1;
+    //object to replace with when fully burnt - should just be a decal
+    public GameObject burntObject;
 
     Animator animator;
 
@@ -93,6 +95,10 @@ public class Flammable : MonoBehaviour
     //Destorys the object when the fire has fully burnt out
     void BurnOut()
     {
+        if (burntObject != null)
+        {
+            Instantiate(burntObject,transform.position, transform.rotation);
+        }
         Destroy(gameObject);
     }
 }
