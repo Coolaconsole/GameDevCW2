@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,9 @@ public class GridbasedMovementScript : MonoBehaviour
     Rigidbody2D rb;
     //Collision to prevent moving into objects
     Collider2D collision;
+    public bool canTalkTo = false;
+    public bool isImmovable = false;
+    public List<string> dialogueLines = new List<string>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +55,9 @@ public class GridbasedMovementScript : MonoBehaviour
     }
 
     public bool CanMove(Direction direction) {
+        if (isImmovable) {
+            return false;
+        }
         //Work out the change in position
         Vector2 movementVector = DirectionToVector(direction);
 
@@ -68,6 +75,15 @@ public class GridbasedMovementScript : MonoBehaviour
                 GridbasedMovementScript otherMovement = raycastHit2D.collider.GetComponentInParent<GridbasedMovementScript>();
                 if (otherMovement != null)
                 {
+                    if (otherMovement.CanTalkTo() && otherMovement.GetDialogueLines().Count > 0)
+                    {
+                        TextManager.Instance.QueuePrompt(otherMovement.GetDialogueLines()[0]);
+                        otherMovement.DecrementDialogueLines();
+                        Debug.Log("Talking to " + otherMovement.gameObject.name);
+                        //cannot move into characters
+                        canMove = false;
+                        break;
+                    }
                     //if movable try to move it and if success then this can move as well
                     if (otherMovement.CanMove(direction))
                     {
@@ -80,6 +96,20 @@ public class GridbasedMovementScript : MonoBehaviour
             }
         }
         return canMove;
+    }
+
+    //whether this object can be talked to
+    public bool CanTalkTo() {
+        return canTalkTo;
+    }
+
+    public List<string> GetDialogueLines() {
+        return dialogueLines;
+    }
+    public void DecrementDialogueLines() {
+        if (dialogueLines.Count > 1) {
+            dialogueLines.RemoveAt(0); // Repeat last line if no more lines
+        }
     }
 
     //convert direction into a vector - used for moving rb and traces while mainating only cardinal movement

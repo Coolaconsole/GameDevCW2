@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1204746179257966705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 297491065c2a26d4885811ebb6e979ef, type: 3}
+  m_Script: {fileID: 11500000, guid: ba6819d7733dd02448152bdf8f56ba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gridSquareDist: 1
@@ -186,8 +186,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1204746179257966705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d7d2f61da1cbc47b0ccb333f484da7, type: 3}
+  m_Script: {fileID: 11500000, guid: ad2af31f3c18ee344bdaa9b976e9c833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   info:
-    eventName: Default Story Event
+    eventName: 

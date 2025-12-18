@@ -163,10 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3418458732250012131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 297491065c2a26d4885811ebb6e979ef, type: 3}
+  m_Script: {fileID: 11500000, guid: c68a05d39327c6b40b6071f54b5cea48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSquareDist: 1
+  inputCooldownTime: 1
 --- !u!114 &137298241016560067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3418458732250012131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4bed05a1909ef43b273b5be07dc144, type: 3}
+  m_Script: {fileID: 11500000, guid: ba6819d7733dd02448152bdf8f56ba31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputCooldownTime: 0.2
+  gridSquareDist: 1
