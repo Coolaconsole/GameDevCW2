@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2619755687558352212}
   - component: {fileID: 6241364804739304391}
   m_Layer: 0
-  m_Name: Story Item Podium
+  m_Name: Offering Podium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815115849
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.83396226, g: 0.3445995, b: 0.50106615, a: 1}
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db02c2705d61a454fb367aa7124185b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  info:
+    eventName: 
 --- !u!114 &6241364804739304391
 MonoBehaviour:
   m_ObjectHideFlags: 0

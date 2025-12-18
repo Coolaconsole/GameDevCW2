@@ -19,8 +19,8 @@ public class StoryManager : MonoBehaviour
 
         currentEventFlags = new Dictionary<string, bool>() {
             {"Default Story Event", false},
-            {"RecivedHammer", true},
-            {"RecivedFire", false},
+            {"RecivedHammer", false},
+            {"RecivedFire", true},
         };
 
         savedEventFlags = currentEventFlags;
@@ -37,10 +37,6 @@ public class StoryManager : MonoBehaviour
                 currentEventFlags[info.eventName] = true;
                 eventOccured?.Invoke(info.eventName);
             }
-        }
-        foreach(string key in currentEventFlags.Keys)
-        {
-            Debug.Log(key + ": " + currentEventFlags[key]);
         }
     }
 

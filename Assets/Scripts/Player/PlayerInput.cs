@@ -38,7 +38,6 @@ public class PlayerInput : MonoBehaviour
             //bind delegate
             hammer.enabled = manager.getEvent("RecivedHammer");
             fire.enabled = manager.getEvent("RecivedFire");
-            Debug.Log(hammer.enabled + " " + fire.enabled);
         }
         else
         {

@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(StoryEventTrigger))]
 [RequireComponent(typeof(Collider2D))]
@@ -9,8 +10,8 @@ public class StoryEventVolume : MonoBehaviour
 {
     //if the tirgger should occur on enter or exit of the volume
     public bool onEnter = true;
-    //if not null then will only react to the specific object specified - set to null if  doesn't have the StoryEventTag component
-    public Object specificStoryObject;
+    //if not empty then will only react to the specific tags specified
+    public List<StoryEventTag> specificStoryTags = new List<StoryEventTag>();
 
     //The trigger to update the story engine
     StoryEventTrigger trigger;
@@ -24,15 +25,6 @@ public class StoryEventVolume : MonoBehaviour
         volume = GetComponent<Collider2D>();
         //force trigger
         volume.isTrigger = true;
-
-        //set specificStoryObject to null if it has no tag
-        if (specificStoryObject != null )
-        {
-            if (specificStoryObject.GetComponent<StoryEventTag>() == null) 
-            {
-                specificStoryObject = null;
-            }
-        }
     }
 
     void volumeTriggerCheck(Collider2D collider)
@@ -42,15 +34,14 @@ public class StoryEventVolume : MonoBehaviour
 
         if (tag != null)
         {
-            if (specificStoryObject != null)
+            if (specificStoryTags.Count != 0)
             {
-                if (tag != specificStoryObject.GetComponent<StoryEventTag>())
+                if (!specificStoryTags.Contains(tag))
                 {
                     //if the volume has a specifc object and this isn't it abort
                     return;
                 }
             }
-
             //trigger the story event if has tag and can proceed
             //assume story engine handles duplicate tags
             trigger.Trigger(tag.info);

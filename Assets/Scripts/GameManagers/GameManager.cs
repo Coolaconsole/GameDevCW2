@@ -1,0 +1,57 @@
+using UnityEngine;
+using System.Collections.Generic;
+using System;
+using UnityEngine.SceneManagement;
+using Unity.Collections;
+using UnityEngine.UIElements;
+
+public class GameManager : MonoBehaviour
+{
+    //the default secene to load after level completion
+    public string nextSceneName;
+
+    //the story manager flag for is flag1Scene should be loaded
+    public string flag1;
+    //the secene to load after level completion if story flag1 is true
+    public string flag1SceneName;
+
+    //the story manager flag for is flag2Scene should be loaded
+    public string flag2;
+    //the secene to load after level completion if story flag2 is true
+    public string flag2SceneName;
+
+    string CurrentSceneName;
+
+    StoryManager manager;
+    void Start()
+    {
+        CurrentSceneName = SceneManager.GetActiveScene().name;
+        manager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
+    }
+
+    public void ResetLevel()
+    {
+        if (manager != null)
+        {
+            manager.Reset();
+        }
+        SceneManager.LoadScene(CurrentSceneName);
+    }
+
+    public void NextLevel()
+    {
+        manager.Save();
+        if (manager.getEvent(flag1))
+        {
+            SceneManager.LoadScene(flag1SceneName);
+        }
+        else if (manager.getEvent(flag2))
+        {
+            SceneManager.LoadScene(flag2SceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+    }
+}
