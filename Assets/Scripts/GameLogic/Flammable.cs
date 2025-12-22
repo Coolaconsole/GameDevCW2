@@ -75,8 +75,8 @@ public class Flammable : MonoBehaviour
     void SpreadFire()
     {
         ContactFilter2D contactFilter = new ContactFilter2D();
-        contactFilter.useTriggers = false; //may not want this
-        Collider2D[] results = new Collider2D[5];
+        contactFilter.useTriggers = true;
+        Collider2D[] results = new Collider2D[10];
         Physics2D.OverlapCircle(transform.position, fireRange,contactFilter, results);
 
         foreach(Collider2D collider in results)

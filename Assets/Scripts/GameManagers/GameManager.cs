@@ -43,14 +43,17 @@ public class GameManager : MonoBehaviour
         manager.Save();
         if (manager.getEvent(flag1))
         {
+            Debug.Log("flag1");
             SceneManager.LoadScene(flag1SceneName);
         }
         else if (manager.getEvent(flag2))
         {
+            Debug.Log("flag2");
             SceneManager.LoadScene(flag2SceneName);
         }
         else
         {
+            Debug.Log("else");
             SceneManager.LoadScene(nextSceneName);
         }
     }

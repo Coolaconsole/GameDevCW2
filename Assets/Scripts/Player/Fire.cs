@@ -13,7 +13,7 @@ public class Fire : MonoBehaviour
     {
         Vector2 postion = new Vector2(transform.position.x, transform.position.y) + movement.DirectionToVector(direction);
         ContactFilter2D contactFilter = new ContactFilter2D();
-        contactFilter.useTriggers = false;
+        contactFilter.useTriggers = true;
         Collider2D[] results = new Collider2D[5];
         Physics2D.OverlapCircle(postion, movement.gridSquareDist / 2, contactFilter, results);
 
