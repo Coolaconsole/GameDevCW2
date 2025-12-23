@@ -29,7 +29,7 @@ public class GridbasedMovementScript : MonoBehaviour
         //check if can move - propogating to those it is pushing
         if (CanMove(direction))
         {
-            //get the items being pused
+            //get the items being puhsed
             RaycastHit2D[] testResults = new RaycastHit2D[5];
             ContactFilter2D contactFilter = new ContactFilter2D();
             contactFilter.useTriggers = false;

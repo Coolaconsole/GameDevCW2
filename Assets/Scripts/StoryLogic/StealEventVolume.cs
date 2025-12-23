@@ -6,26 +6,8 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Collider2D))]
 
 //triggers a story event when an object with StortEventTag enters or exits
-public class StoryEventVolume : MonoBehaviour
+public class StealEventVolume : StoryEventVolume
 {
-    //if the tirgger should occur on enter or exit of the volume
-    public bool onEnter = true;
-    //if not empty then will only react to the specific tags specified
-    public List<StoryEventTag> specificStoryTags = new List<StoryEventTag>();
-
-    //The trigger to update the story engine
-    protected StoryEventTrigger trigger;
-    //Collision for the volume
-    Collider2D volume;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    protected virtual void Start()
-    {
-        trigger = GetComponent<StoryEventTrigger>();
-        volume = GetComponent<Collider2D>();
-        //force trigger
-        volume.isTrigger = true;
-    }
 
     protected virtual void volumeTriggerCheck(Collider2D collider)
     {
@@ -44,25 +26,38 @@ public class StoryEventVolume : MonoBehaviour
             }
             //trigger the story event if has tag and can proceed
             //assume story engine handles duplicate tags
-            trigger.Trigger(tag.info);
+            StoryEventInfo info = tag.info;
+            if (info.eventName == "2.2 Evil") { info.eventName = "2.2 Steal"; }
+            else if (info.eventName == "2.2 Neutral") { info.eventName = "2.2 Give"; }
+            trigger.Trigger(info);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //only trigger if the volume is set to on enter
-        if (onEnter) 
+        StoryEventTag tag = collision.GetComponentInParent<StoryEventTag>();
+
+        if (tag != null)
         {
-            volumeTriggerCheck(collision);
+            if (tag.info.eventName == "2.2 Neutral")
+            {
+                volumeTriggerCheck(collision);
+            }   
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //only trigger if the volume is set to on exit
-        if (!onEnter)
+        //only trigger if the volume is set to on enter
+        StoryEventTag tag = collision.GetComponentInParent<StoryEventTag>();
+
+        if (tag != null)
         {
-            volumeTriggerCheck(collision);
+            if (tag.info.eventName == "2.2 Evil")
+            {
+                volumeTriggerCheck(collision);
+            }
         }
     }
 }
