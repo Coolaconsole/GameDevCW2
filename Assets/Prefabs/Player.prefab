@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 9046131118522646762}
   - component: {fileID: 5004073202721232223}
   - component: {fileID: 137298241016560067}
+  - component: {fileID: 7636753598925073483}
+  - component: {fileID: 2985610941750782263}
+  - component: {fileID: 2046571525590468620}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -80,12 +83,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.060640786, g: 0.6301887, b: 0.14465591, a: 1}
+  m_Sprite: {fileID: -4594226271344970791, guid: bac3677cac8b78942b39340cf5792627, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 1
+  m_Size: {x: 1, y: 0.76}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -180,3 +183,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputCooldownTime: 0.2
+--- !u!114 &7636753598925073483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418458732250012131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26bace2bade62984c95e21178b42a079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2985610941750782263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418458732250012131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9054f766d928541439cdfb8b89477eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2046571525590468620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418458732250012131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93bca3baae38cd41bb6437a6b75f4a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipThreshold: 0.01

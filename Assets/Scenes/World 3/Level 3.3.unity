@@ -6019,6 +6019,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7819360296362523056, guid: f31f3210946268a438978c2df22ba570, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4594226271344970791, guid: bac3677cac8b78942b39340cf5792627, type: 3}
+    - target: {fileID: 7819360296362523056, guid: f31f3210946268a438978c2df22ba570, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819360296362523056, guid: f31f3210946268a438978c2df22ba570, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819360296362523056, guid: f31f3210946268a438978c2df22ba570, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8504268083868398707, guid: f31f3210946268a438978c2df22ba570, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11
