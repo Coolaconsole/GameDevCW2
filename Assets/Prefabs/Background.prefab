@@ -5965,8 +5965,8 @@ MonoBehaviour:
   - {fileID: -2038337189, guid: 0e9090377527d79478c311cac0c8bc0e, type: 3}
   - {fileID: -2111490419, guid: 0e9090377527d79478c311cac0c8bc0e, type: 3}
   - {fileID: -1619871153, guid: 0e9090377527d79478c311cac0c8bc0e, type: 3}
-  width: 30
-  height: 20
+  width: 100
+  height: 60
   spacing: 1
   scaleBuffer: 1.01
   enablePixelSnapping: 1
