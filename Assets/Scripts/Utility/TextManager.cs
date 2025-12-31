@@ -21,7 +21,7 @@ public class TextManager : MonoBehaviour
     
     [Header("Text UI")]
     List<(string key, string text, Vector3 pos, bool pausesGame)> promptQueue = new List<(string, string, Vector3, bool)>();
-    public GameObject promptObject;
+    public GameObject textBox;
 
     public float charsPerSecond = 25f;
     public float punctuationPause = 0.25f;
@@ -54,23 +54,25 @@ public class TextManager : MonoBehaviour
 
     public bool HasUnclosedPrompts()
     {
-        return (promptQueue.Count > 0) || promptObject.activeSelf;
+        return (promptQueue.Count > 0) || textBox.activeSelf;
     }
 
     private void Start()
     {
         // Starting Prompts
         textPrompts["name"] = ("Text", new Vector3(0, 0, 0), null, true);
+        textPrompts["next"] = ("Text 2", new Vector3(0, 0, 0), null, true);
+        textPrompts["last"] = ("STOP TALKING TO ME", new Vector3(0, 0, 0), null, true);
     }
 
     private void Update()
     {
-        if (promptObject.activeSelf && Time.timeScale != 0)
+        if (textBox.activeSelf && Time.timeScale != 0)
         {
             //Whether all prompts pause game or just this specific one pause game
             Time.timeScale = allPromptsPauseGame || currentPromptPausesGame ? 0f : 1f;
         }
-        if (promptObject.activeSelf && Input.GetKeyDown(KeyCode.R))
+        if (textBox.activeSelf && Input.GetKeyDown(KeyCode.R))
         {
             if (!typingComplete)
                 CompleteInstantly();
@@ -82,7 +84,7 @@ public class TextManager : MonoBehaviour
             return;
         }
 
-        if (!promptObject.activeSelf && promptQueue.Count > 0)
+        if (!textBox.activeSelf && promptQueue.Count > 0)
         {
             ShowNextPrompt();
         }
@@ -96,9 +98,9 @@ public class TextManager : MonoBehaviour
         currentPromptKey = key;
         currentPromptPausesGame = pausesGame;
         
-        promptObject.SetActive(true);
-        var rect = promptObject.GetComponent<RectTransform>();
-        tmp = promptObject.GetComponentInChildren<TextMeshProUGUI>();
+        textBox.SetActive(true);
+        var rect = textBox.GetComponent<RectTransform>();
+        tmp = textBox.GetComponentInChildren<TextMeshProUGUI>();
         rect.anchoredPosition3D = pos;
 
         //If the prompt is specified to pause the game or everyone does 
@@ -119,9 +121,9 @@ public class TextManager : MonoBehaviour
 
     public void ClosePrompt()
     {
-        if (promptObject.activeSelf)
+        if (textBox.activeSelf)
         {
-            promptObject.SetActive(false);
+            textBox.SetActive(false);
             currentPromptKey = "";
         }
         if (promptQueue.Count == 0)
@@ -135,7 +137,7 @@ public class TextManager : MonoBehaviour
             //Checks for event completion
             if (completedEvents.Contains(key))
             {
-                textPrompts.Remove(key);
+                //textPrompts.Remove(key);
                 return;
             }
             
@@ -148,7 +150,7 @@ public class TextManager : MonoBehaviour
                 unityEvent.AddListener(() => { OnEventTriggerd(key); });
             }
             
-            textPrompts.Remove(key);  // so they arent shown again
+            //textPrompts.Remove(key);  // so they arent shown again
         }
     }
 

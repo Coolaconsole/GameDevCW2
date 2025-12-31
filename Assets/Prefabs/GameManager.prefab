@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4759137822825718682}
   - component: {fileID: 8713603018741749743}
+  - component: {fileID: 6086240510640324409}
+  - component: {fileID: 1456453339645335496}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,3 +51,40 @@ MonoBehaviour:
   flag1SceneName: 
   flag2: 
   flag2SceneName: 
+--- !u!114 &6086240510640324409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313076887565449580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ebd21c1a566a8459be66b222769005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allPromptsPauseGame: 0
+  eventBasedPromptCompletion: 0
+  textBox: {fileID: 0}
+  charsPerSecond: 25
+  punctuationPause: 0.25
+  onEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1456453339645335496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3313076887565449580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afe18c44c3f60c4391e7ffc6ba2553a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: click
+    clip: {fileID: 8300000, guid: e351494fbd32cfe40a72c1fd8532cf40, type: 3}
+  musicTracks: []
+  initialPoolSize: 10
