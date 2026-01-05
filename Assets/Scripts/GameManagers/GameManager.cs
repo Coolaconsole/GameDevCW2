@@ -26,15 +26,20 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CurrentSceneName = SceneManager.GetActiveScene().name;
+    }
+    private void Awake()
+    {
         manager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
     }
 
     public void ResetLevel()
     {
+        CurrentSceneName = SceneManager.GetActiveScene().name;
         if (manager != null)
         {
             manager.Reset();
         }
+        Debug.Log(CurrentSceneName);
         SceneManager.LoadScene(CurrentSceneName);
     }
 
@@ -43,17 +48,17 @@ public class GameManager : MonoBehaviour
         manager.Save();
         if (manager.getEvent(flag1))
         {
-            Debug.Log("flag1");
+            Debug.Log("flag1: " + flag1SceneName);
             SceneManager.LoadScene(flag1SceneName);
         }
         else if (manager.getEvent(flag2))
         {
-            Debug.Log("flag2");
+            Debug.Log("flag2: " + flag1SceneName);
             SceneManager.LoadScene(flag2SceneName);
         }
         else
         {
-            Debug.Log("else");
+            Debug.Log("else: " + nextSceneName);
             SceneManager.LoadScene(nextSceneName);
         }
     }

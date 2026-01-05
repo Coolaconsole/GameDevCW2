@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/Village/village1.unity
+    guid: c9664ed9efbcb2e43a66d9b6fa9a2fb1
+  - enabled: 1
     path: Assets/Scenes/World 1/Level 1.1.unity
     guid: 9acef815ec0964448a8c1ec6b31f3cd5
   - enabled: 1
@@ -18,23 +21,68 @@ EditorBuildSettings:
     path: Assets/Scenes/World 1/Level 1.3.unity
     guid: cf3017c6df42b5a41ba0de552d6638ce
   - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter1 Good.unity
+    guid: 55ae961dc679b8c41bfbbef1d2d5dc48
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter1 Neutral.unity
+    guid: 37cfee255e1e26540a25f68fc1456bde
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter1 Evil.unity
+    guid: 18d86105ec3544043a26eae876db46c6
+  - enabled: 1
+    path: Assets/Scenes/Village/village2 Evil.unity
+    guid: a40ded9d61233354a807d919c709c9f3
+  - enabled: 1
+    path: Assets/Scenes/Village/village2 Good.unity
+    guid: e2b54e9330140c84b93b05ce11e14628
+  - enabled: 1
+    path: Assets/Scenes/Village/village2 Neutral.unity
+    guid: ea21981fae91bbb44aa1f86fdcbca057
+  - enabled: 1
     path: Assets/Scenes/World 2/Level 2.1.unity
     guid: baeeda0d25f740d4fb417a3647eac147
   - enabled: 1
     path: Assets/Scenes/World 2/Level 2.2.unity
-    guid: 6e80e34441c2ef549a44decde11cb50d
+    guid: abdcd3a17931e4c4aab39d7a6abcf523
   - enabled: 1
     path: Assets/Scenes/World 2/Level 2.3.unity
-    guid: e27da3d59233e2346a32ab4f4668fdd5
+    guid: 1aa96665e6768614aa99f06c369acc32
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter2 Evil.unity
+    guid: 41ae01c8f8840b040819b4761b541092
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter2 Good.unity
+    guid: 1235cf6f51c341b4aba9fd8146f96cab
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter2 Neutral.unity
+    guid: cb52a0c36450da4419dc19bdfa3c11e8
+  - enabled: 1
+    path: Assets/Scenes/Village/village3 Evil.unity
+    guid: 57bfa56749218b0458a6d9f337b3a445
+  - enabled: 1
+    path: Assets/Scenes/Village/village3 Good.unity
+    guid: d8a78357c4e5e9e4995589f5c427e217
+  - enabled: 1
+    path: Assets/Scenes/Village/village3 Neutral.unity
+    guid: 401ace2a035b14e42b35805ab441b912
   - enabled: 1
     path: Assets/Scenes/World 3/Level 3.1.unity
-    guid: ce5bc32265208a142b5624fa8e9a8e0a
+    guid: a456f2d1389f4764398e19b53224df1f
   - enabled: 1
     path: Assets/Scenes/World 3/Level 3.2.unity
-    guid: ec86df3b7620b2c4392d251d4728140d
+    guid: 4f64c7d1da59a20469a299e1eab04704
   - enabled: 1
     path: Assets/Scenes/World 3/Level 3.3.unity
-    guid: 021501be13c8aad489e1b99f0b679b5e
+    guid: 1b0683dfc99d75e4088936c88d437f99
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter3 Evil.unity
+    guid: 17acfa7fc4c06904e94a01087506a14e
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter3 Good.unity
+    guid: 4bc52e3791fafec4b907076caa3cf5f8
+  - enabled: 1
+    path: Assets/Scenes/Jupiter/Jupiter3 Neutral.unity
+    guid: 8e7d4f4fb76ed8d40b1415adfce6fc55
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

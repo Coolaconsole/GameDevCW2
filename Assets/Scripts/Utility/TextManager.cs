@@ -16,12 +16,17 @@ public class TextManager : MonoBehaviour
     [Header("Text Settings")]
     [SerializeField] private bool allPromptsPauseGame = false;
     [SerializeField] private bool eventBasedPromptCompletion = false;
-    private Dictionary<string, (string, Vector3, UnityEvent, bool)> textPrompts = new Dictionary<string, (string, Vector3, UnityEvent, bool)>();
+
+    StoryManager sManager;
+
+// Text prompts stored with key, text, position, optional story event to trigger, optional unity event to trigger
+    private Dictionary<string, (string text, Vector3 pos, string tag, bool evnt)> textPrompts = new Dictionary<string, (string, Vector3, string, bool)>();
+    // Tracks text prompts that have been completed via events so they don't show again
     private HashSet<string> completedEvents = new HashSet<string>();
     
     [Header("Text UI")]
-    List<(string key, string text, Vector3 pos, bool pausesGame)> promptQueue = new List<(string, string, Vector3, bool)>();
-    public GameObject promptObject;
+    List<(string key, string text, Vector3 pos, bool eventBasedCompletion, string storyTrigger)> promptQueue = new List<(string, string, Vector3, bool, string)>();
+    public GameObject textBox;
 
     public float charsPerSecond = 25f;
     public float punctuationPause = 0.25f;
@@ -37,8 +42,7 @@ public class TextManager : MonoBehaviour
     [Header("Others")]
     public static TextManager Instance { get; private set; }
 
-    //Events that can be called from other scripts
-    [HideInInspector] public UnityEvent onEvent = new UnityEvent();
+    private bool waitingForEvent = false;
 
     void Awake()
     {
@@ -54,23 +58,32 @@ public class TextManager : MonoBehaviour
 
     public bool HasUnclosedPrompts()
     {
-        return (promptQueue.Count > 0) || promptObject.activeSelf;
+        return (promptQueue.Count > 0) || textBox.activeSelf;
     }
 
     private void Start()
     {
+        sManager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
+
         // Starting Prompts
-        textPrompts["name"] = ("Text", new Vector3(0, 0, 0), null, true);
+        textPrompts["name"] = ("Text", new Vector3(0, 0, 0), null, false);
+
+
+        textPrompts["evilNPC1-hi"] = ("Hey you, come over here. I have something for ya...", new Vector3(-169, -135, 0), null, false);
+        textPrompts["evilNPC1-king"] = ("You know... you don't have to ask for a king. We could do better.", new Vector3(-169, -135, 0), null, false);
+        textPrompts["evilNPC1-offer"] = ("I took this from the village, Jupiter could be bargained with.", new Vector3(-169, -135, 0), null, false);
+
+        QueuePrompt("name");
     }
 
     private void Update()
     {
-        if (promptObject.activeSelf && Time.timeScale != 0)
+        if (textBox.activeSelf && Time.timeScale != 0)
         {
             //Whether all prompts pause game or just this specific one pause game
             Time.timeScale = allPromptsPauseGame || currentPromptPausesGame ? 0f : 1f;
         }
-        if (promptObject.activeSelf && Input.GetKeyDown(KeyCode.R))
+        if (textBox.activeSelf && Input.GetKeyDown(KeyCode.R) && !waitingForEvent)
         {
             if (!typingComplete)
                 CompleteInstantly();
@@ -82,7 +95,7 @@ public class TextManager : MonoBehaviour
             return;
         }
 
-        if (!promptObject.activeSelf && promptQueue.Count > 0)
+        if (!textBox.activeSelf && promptQueue.Count > 0)
         {
             ShowNextPrompt();
         }
@@ -90,19 +103,20 @@ public class TextManager : MonoBehaviour
 
     private void ShowNextPrompt()
     {
-        (string key, string text, Vector3 pos, bool pausesGame) = promptQueue[0];
+        (string key, string text, Vector3 pos, bool eventBasedCompletion, string storyTrigger) = promptQueue[0];
         promptQueue.RemoveAt(0);
 
         currentPromptKey = key;
-        currentPromptPausesGame = pausesGame;
-        
-        promptObject.SetActive(true);
-        var rect = promptObject.GetComponent<RectTransform>();
-        tmp = promptObject.GetComponentInChildren<TextMeshProUGUI>();
+        eventBasedPromptCompletion = eventBasedCompletion;
+        Debug.Log("EventBasedCompletion: " + eventBasedCompletion);
+        // currentPromptPausesGame = true; // Currently stay false unless set otherwise
+        textBox.SetActive(true);
+        var rect = textBox.GetComponent<RectTransform>();
+        tmp = textBox.GetComponentInChildren<TextMeshProUGUI>();
         rect.anchoredPosition3D = pos;
 
         //If the prompt is specified to pause the game or everyone does 
-        if (pausesGame || allPromptsPauseGame)
+        if (currentPromptPausesGame || allPromptsPauseGame)
         {
             //Cannot have typing animation so just show text
             StartTyping(text);
@@ -115,13 +129,19 @@ public class TextManager : MonoBehaviour
             Time.timeScale = 1f;
             StartTyping(text);
         }
+
+        //If there is an event, set the flag in the story manager
+        if (storyTrigger != null)
+        {
+            sManager.StoryEvent(new StoryEventInfo(storyTrigger));
+        }
     }
 
     public void ClosePrompt()
     {
-        if (promptObject.activeSelf)
+        if (textBox.activeSelf && !waitingForEvent)
         {
-            promptObject.SetActive(false);
+            textBox.SetActive(false);
             currentPromptKey = "";
         }
         if (promptQueue.Count == 0)
@@ -135,20 +155,14 @@ public class TextManager : MonoBehaviour
             //Checks for event completion
             if (completedEvents.Contains(key))
             {
-                textPrompts.Remove(key);
+                //textPrompts.Remove(key);
                 return;
             }
             
-            var (text, pos, unityEvent, pause) = textPrompts[key];
-            promptQueue.Add((key, text, pos, pause));
-
-            //If there is an event subscribe to it, if it goes off complete text prompt
-            if (unityEvent != null)
-            {
-                unityEvent.AddListener(() => { OnEventTriggerd(key); });
-            }
+            var (text, pos, storyEvent, unityEvent) = textPrompts[key];
+            promptQueue.Add((key, text, pos, unityEvent, storyEvent));
             
-            textPrompts.Remove(key);  // so they arent shown again
+            //textPrompts.Remove(key);  // so they arent shown again
         }
     }
 
@@ -214,20 +228,18 @@ public class TextManager : MonoBehaviour
         typingComplete = true;
     }
 
-    public void OnEventTriggerd(string eventKey)
+    public void CompleteCurrentPrompt()
     {
-        //Turns this on to allow event triggering
-        if (!eventBasedPromptCompletion) { return; }
-        
-        completedEvents.Add(eventKey);
+        if (!textBox.activeSelf) return;
+        if (!waitingForEvent) return;
 
-        if (currentPromptKey == eventKey)
+        waitingForEvent = false;
+        ClosePrompt();
+
+        if (promptQueue.Count > 0)
         {
-            ClosePrompt();
+            ShowNextPrompt();
         }
-        
-        //Removes it from the queue if it hasn't come up yet
-        promptQueue.RemoveAll(p => p.key == eventKey);
     }
 
 
