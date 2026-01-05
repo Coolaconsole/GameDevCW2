@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CurrentSceneName = SceneManager.GetActiveScene().name;
+    }
+    private void Awake()
+    {
         manager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
     }
 

@@ -78,6 +78,7 @@ public class GridbasedMovementScript : MonoBehaviour
                 {
                     if (otherMovement.CanTalkTo() && otherMovement.GetDialogueLines().Count > 0)
                     {
+                        TextManager.Instance.ClosePrompt(); // Close any existing prompts
                         TextManager.Instance.QueuePrompt(otherMovement.GetDialogueLines()[0]);
                         otherMovement.DecrementDialogueLines();
                         Debug.Log("Talking to " + otherMovement.gameObject.name);
