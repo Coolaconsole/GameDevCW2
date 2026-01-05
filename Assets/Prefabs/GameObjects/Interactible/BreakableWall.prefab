@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8341771485236692028}
   - component: {fileID: 6935867257600911743}
   - component: {fileID: 1033644257111633386}
-  m_Layer: 0
+  - component: {fileID: 3930960102793249056}
+  m_Layer: 3
   m_Name: BreakableWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8278373519854089799, guid: 4a764e0c1c333a743adf861610618a9c, type: 3}
-  m_Color: {r: 0.75294125, g: 0.2901961, b: 0.003921569, a: 1}
+  m_Sprite: {fileID: 1033006902, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  m_Color: {r: 0.8037735, g: 0.3270118, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -148,3 +149,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenObject: {fileID: 1699428224979729891, guid: 270eca3973ac0d54b98ae78bd991f2e5, type: 3}
+--- !u!114 &3930960102793249056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300864774330435057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f764b1f9e732bef4c9f200b6373559ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 0
+  staticSprite: {fileID: 0}
+  wallVariants:
+  - {fileID: 1033006902, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -62650701, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -1190095366, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -1072408201, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -7614176681532881009, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -83067456, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: 1159864494577512369, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -1268738500, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: 347158554, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -346401944, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -1278731663, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -1134024605, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: 4288597548307622778, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: 1294240151, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: 3953150516908535398, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  - {fileID: -1669642276, guid: ec71196f59542944b9461aecf580d172, type: 3}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  checkDistance: 1

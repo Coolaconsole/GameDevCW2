@@ -9,20 +9,60 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6049605792901559095, guid: 89bcfaad4426c704d81f3ee01e925af8, type: 3}
+    - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
       propertyPath: m_Color.b
-      value: 0.88951397
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
       propertyPath: m_Color.g
-      value: 0.93207544
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1204746179257966705, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
       propertyPath: m_Name
       value: River
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204746179257966705, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646123564114886755, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: isStatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646123564114886755, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646123564114886755, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: staticSprite
+      value: 
+      objectReference: {fileID: 6049605792901559095, guid: 89bcfaad4426c704d81f3ee01e925af8, type: 3}
+    - target: {fileID: 2646123564114886755, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720297918211817441, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720297918211817441, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698564540517329787, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8698564540517329787, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
       propertyPath: m_LocalPosition.x

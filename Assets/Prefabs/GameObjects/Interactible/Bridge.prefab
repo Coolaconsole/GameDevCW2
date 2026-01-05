@@ -20,10 +20,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 823119962544425541, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 823119962544425541, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 5245827539249269685, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      objectReference: {fileID: 4956269106429387390, guid: 4d8a0ffed72a9574ea1d2b08cfe5610c, type: 3}
     - target: {fileID: 5245827539249269685, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
       propertyPath: m_Color.b
       value: 0.3150943
