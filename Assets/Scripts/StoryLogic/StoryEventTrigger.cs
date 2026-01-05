@@ -3,6 +3,7 @@ using UnityEngine;
 public class StoryEventTrigger : MonoBehaviour
 {
     public StoryEventInfo info;
+    public bool OverrideInfo = false;
     StoryManager manager;
 
     private void Start()
@@ -20,7 +21,10 @@ public class StoryEventTrigger : MonoBehaviour
 
     public void Trigger(StoryEventInfo info)
     {
-        this.info = info;
+        if (!OverrideInfo)
+        {
+            this.info = info;
+        }
         Trigger();
     }
 }
