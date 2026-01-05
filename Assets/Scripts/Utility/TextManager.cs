@@ -34,7 +34,7 @@ public class TextManager : MonoBehaviour
     private Coroutine typingRoutine;
     private TextMeshProUGUI tmp;
     private string currentText = "";
-    private bool typingComplete = false;
+    private bool typingComplete = true;
     
     private string currentPromptKey = "";
     private bool currentPromptPausesGame = false;
@@ -64,16 +64,16 @@ public class TextManager : MonoBehaviour
     private void Start()
     {
         sManager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
-
-        // Starting Prompts
-        textPrompts["name"] = ("Text", new Vector3(0, 0, 0), null, false);
+        
 
 
         textPrompts["evilNPC1-hi"] = ("Hey you, come over here. I have something for ya...", new Vector3(-169, -135, 0), null, false);
         textPrompts["evilNPC1-king"] = ("You know... you don't have to ask for a king. We could do better.", new Vector3(-169, -135, 0), null, false);
         textPrompts["evilNPC1-offer"] = ("I took this from the village, Jupiter could be bargained with.", new Vector3(-169, -135, 0), null, false);
+        textPrompts["evilNPC1-deal"] = ("Take it with you, Jupiter will give you what you want.", new Vector3(-169, -135, 0), null, true);
 
-        QueuePrompt("name");
+        //Npc who gives you a hammer
+        textPrompts["RecieveHammer"] = ("Before you leave, take this!", new Vector3(0, 0, 0), "RecivedHammer", true);
     }
 
     private void Update()
@@ -137,15 +137,17 @@ public class TextManager : MonoBehaviour
         }
     }
 
-    public void ClosePrompt()
+    public bool ClosePrompt()
     {
-        if (textBox.activeSelf && !waitingForEvent)
+        if (textBox.activeSelf && !waitingForEvent && typingComplete)
         {
             textBox.SetActive(false);
             currentPromptKey = "";
+            return true;
         }
         if (promptQueue.Count == 0)
             Time.timeScale = 1f;
+        return !textBox.activeSelf && typingComplete;
     }
 
     public void QueuePrompt(string key)
