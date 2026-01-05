@@ -41,6 +41,9 @@ TagManager:
   - name: Background
     uniqueID: 1237444119
     locked: 0
+  - name: River
+    uniqueID: 3532525519
+    locked: 0
   - name: OnGround
     uniqueID: 1598910575
     locked: 0
