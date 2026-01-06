@@ -12,6 +12,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Offering Podium
       objectReference: {fileID: 0}
+    - target: {fileID: 2240350398135466726, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240350398135466726, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1165778088226280915, guid: 3a8e884539c1e4a4081300aa6969b7fb, type: 3}
+    - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
       propertyPath: m_SortingLayer
       value: -1
@@ -19,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
       propertyPath: m_SortingLayerID
       value: 1598910575
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394462713582582423, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5394462713582582423, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
       propertyPath: m_LocalPosition.x

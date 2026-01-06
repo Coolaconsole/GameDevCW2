@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1033006902, guid: ec71196f59542944b9461aecf580d172, type: 3}
-  m_Color: {r: 0.7509433, g: 0.2912904, b: 0.00991808, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f764b1f9e732bef4c9f200b6373559ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStatic: 0
+  staticSprite: {fileID: 0}
   wallVariants:
   - {fileID: 1033006902, guid: ec71196f59542944b9461aecf580d172, type: 3}
   - {fileID: -62650701, guid: ec71196f59542944b9461aecf580d172, type: 3}
