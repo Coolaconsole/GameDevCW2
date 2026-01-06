@@ -38,15 +38,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4446626693766750516, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
       propertyPath: m_SortingLayerID
       value: 1598910575
       objectReference: {fileID: 0}
     - target: {fileID: 5394462713582582423, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5394462713582582423, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5394462713582582423, guid: d7a3807aea1479341991d10ac5ee465a, type: 3}
       propertyPath: m_LocalPosition.x
