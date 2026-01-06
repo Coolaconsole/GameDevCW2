@@ -28,6 +28,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_SortingLayer
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -762441777
+      objectReference: {fileID: 0}
+    - target: {fileID: 414970712919752907, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 1204746179257966705, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
       propertyPath: m_Name
       value: River

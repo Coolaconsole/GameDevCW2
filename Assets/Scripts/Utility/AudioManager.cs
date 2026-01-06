@@ -151,7 +151,7 @@ public class AudioManager : MonoBehaviour
  
     /// Plays an SFX by name. Includes optional pitch randomization to prevent robotic sounds.
 
-    public void PlaySFX(string name, float volume = 1f, float minPitch = 0.95f, float maxPitch = 1.05f)
+    public void PlaySFX(string name, float volume = 0.1f, float minPitch = 0.75f, float maxPitch = 1.25f)
     {
         if (soundDict.TryGetValue(name, out var clip))
         {

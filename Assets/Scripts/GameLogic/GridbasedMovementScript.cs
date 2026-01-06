@@ -52,6 +52,12 @@ public class GridbasedMovementScript : MonoBehaviour
                 }
             }
 
+            //sorry for spaghetting
+            if (gameObject.CompareTag("Player") && AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySFX("jump");
+            }
+
             //actually move
             rb.MovePosition(rb.position + movementVector);
             return true;
