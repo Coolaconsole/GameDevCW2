@@ -45,20 +45,29 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel(string eventName)
     {
-        manager.Save();
-        if (manager.getEvent(flag1) || eventName == flag1)
+        Debug.Log(eventName);
+        if (manager != null)
         {
-            Debug.Log("flag1: " + flag1SceneName);
-            SceneManager.LoadScene(flag1SceneName);
-        }
-        else if (manager.getEvent(flag2) || eventName == flag2)
-        {
-            Debug.Log("flag2: " + flag2SceneName);
-            SceneManager.LoadScene(flag2SceneName);
+            manager.Save();
+            if (manager.getEvent(flag1) || eventName == flag1)
+            {
+                Debug.Log("flag1: " + flag1SceneName);
+                SceneManager.LoadScene(flag1SceneName);
+            }
+            else if (manager.getEvent(flag2) || eventName == flag2)
+            {
+                Debug.Log("flag2: " + flag2SceneName);
+                SceneManager.LoadScene(flag2SceneName);
+            }
+            else
+            {
+                Debug.Log("else: " + nextSceneName);
+                SceneManager.LoadScene(nextSceneName);
+            }
         }
         else
         {
-            Debug.Log("else: " + nextSceneName);
+            Debug.Log("no story manager: " + nextSceneName);
             SceneManager.LoadScene(nextSceneName);
         }
     }
