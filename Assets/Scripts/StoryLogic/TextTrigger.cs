@@ -14,10 +14,11 @@ public class TextTrigger : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("TextTrigger activated by Player trigger.");
             // Call the method in TextManager to complete the text prompt event
             TextManager.Instance.CompleteCurrentPrompt();
         }

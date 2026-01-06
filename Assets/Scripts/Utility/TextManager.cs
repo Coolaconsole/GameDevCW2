@@ -69,7 +69,7 @@ public class TextManager : MonoBehaviour
         textPrompts["evilNPC1-hi"] = ("Hey you, come over here. I have something for ya...", new Vector3(-169, -135, 0), null, false);
         textPrompts["evilNPC1-king"] = ("You know... you don't have to ask for a king. We could do better.", new Vector3(-169, -135, 0), null, false);
         textPrompts["evilNPC1-offer"] = ("I took this from the village, Jupiter could be bargained with.", new Vector3(-169, -135, 0), null, false);
-        textPrompts["evilNPC1-deal"] = ("Take it with you, Jupiter will give you what you want.", new Vector3(-169, -135, 0), null, true);
+        textPrompts["evilNPC1-deal"] = ("Take it with you, Jupiter will give you what you want.", new Vector3(-169, -135, 0), "1.2 Spawn", true);
 
         //Level 1-3
         textPrompts["goodNPC1-hi"] = ("Hi, I'm glad I could catch you. I have a small request.", new Vector3(-230, -169, 0), null, false);
@@ -238,7 +238,7 @@ public class TextManager : MonoBehaviour
     {
         if (!textBox.activeSelf) return;
         if (!waitingForEvent) return;
-
+        Debug.Log("Completing current prompt");
         waitingForEvent = false;
         ClosePrompt();
 

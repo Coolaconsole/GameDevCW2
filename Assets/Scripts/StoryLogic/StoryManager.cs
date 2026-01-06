@@ -36,6 +36,7 @@ public class StoryManager : MonoBehaviour
         {
             currentEventFlags = new Dictionary<string, bool>() {
                 {"Default Story Event", false},
+                {"1.2 Spawn", false},
                 {"1.1", false},
                 {"1.2 Neutral", false},
                 {"1.2 Evil", false},
@@ -141,6 +142,9 @@ public class StoryManager : MonoBehaviour
         {
             case "1.1":
                 TextManager.Instance.QueuePrompt("evilNPC1-hi");
+                break;
+            case "1.2 Spawn":
+                TextManager.Instance.QueuePrompt("evilNPC1-deal");
                 break;
             case "1.2 Neutral":
                 TextManager.Instance.QueuePrompt("goodNPC1-hi");
