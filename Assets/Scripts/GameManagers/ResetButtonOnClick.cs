@@ -14,6 +14,7 @@ public class ResetButtonOnClick : MonoBehaviour
 
     void OnClick()
     {
+        gameManager = (GameManager)FindAnyObjectByType(typeof(GameManager));
         if (gameManager != null)
         {
             gameManager.ResetLevel();

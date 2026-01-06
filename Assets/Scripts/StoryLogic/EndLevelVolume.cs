@@ -32,7 +32,7 @@ public class EndLevelVolume : StoryEventVolume
             trigger.Trigger(tag.info);
 
             //then tell to load next level
-            gameManager.NextLevel();
+            gameManager.NextLevel(tag.info.eventName);
         }
     }
 }
