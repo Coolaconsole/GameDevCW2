@@ -48,7 +48,7 @@ public class StoryManager : MonoBehaviour
                 {"Ask rich", false},
                 {"Ask log", false},
                 {"Ask food", false},
-                {"2 Start", false},
+                {"2 Offering", false},
                 {"2.1 Offering", false},
                 {"2.1 NoOffering", false},
                 {"2.2 Steal", false},
@@ -158,7 +158,7 @@ public class StoryManager : MonoBehaviour
             case "1.3 Spawn":
                 TextManager.Instance.QueuePrompt("goodNPC1-offer");
                 break;
-            case "2 Start":
+            case "2 Offering":
                 TextManager.Instance.QueuePrompt("evilNPC2-return");
                 break;
             case "2.1 NoOffering":

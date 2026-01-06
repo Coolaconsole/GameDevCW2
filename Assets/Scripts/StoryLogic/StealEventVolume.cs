@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(StoryEventTrigger))]
 [RequireComponent(typeof(Collider2D))]
@@ -42,6 +43,7 @@ public class StealEventVolume : StoryEventVolume
         {
             if (tag.info.eventName == "2.2 Neutral")
             {
+                TextManager.Instance.CompleteCurrentPrompt();
                 volumeTriggerCheck(collision);
             }   
         }
@@ -56,6 +58,8 @@ public class StealEventVolume : StoryEventVolume
         {
             if (tag.info.eventName == "2.2 Evil")
             {
+                TextManager.Instance.CompleteCurrentPrompt();
+                TextManager.Instance.QueuePrompt("goodNPC2-stolen");
                 volumeTriggerCheck(collision);
             }
         }
