@@ -112,15 +112,16 @@ public class StoryManager : MonoBehaviour
     {
         if (savedEventFlags == null) return;
 
-        //Queue the most recent prompt
-        string lastEvent = savedEventFlags.Keys.Reverse().FirstOrDefault(key => savedEventFlags[key]);
-        if (lastEvent != null)
-            lastEvent = "";
-        QueueRevelantPrompt(lastEvent);
         foreach (var key in savedEventFlags.Keys)
         {
             currentEventFlags[key] = savedEventFlags[key];
         }
+
+        //Queue the most recent prompt
+        string lastEvent = currentEventFlags.Keys.Reverse().FirstOrDefault(key => currentEventFlags[key]);
+        if (lastEvent == null)
+            lastEvent = "";
+        QueueRevelantPrompt(lastEvent);
     }
 
     //save the event flags so they persist after reset - called at end of level
@@ -134,7 +135,7 @@ public class StoryManager : MonoBehaviour
 
     private void QueueRevelantPrompt(string key)
     {
-        Debug.Log("Resetting prompts for story event");
+        Debug.Log("Resetting prompts for story event"+ key);
         TextManager.Instance?.ClearQueue();
         switch (key)
         {
