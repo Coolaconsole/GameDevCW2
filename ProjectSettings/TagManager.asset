@@ -47,6 +47,12 @@ TagManager:
   - name: OnGround
     uniqueID: 1598910575
     locked: 0
+  - name: sky
+    uniqueID: 2899985113
+    locked: 0
+  - name: uppersky
+    uniqueID: 1827131921
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
