@@ -11,18 +11,18 @@ PrefabInstance:
     - target: {fileID: 414970712919752907, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c8b46bfd1470d434e8ab09a9f2388211, type: 3}
+      objectReference: {fileID: 4714410783012859700, guid: 76cc55be18071804c980d7dea7366041, type: 3}
     - target: {fileID: 414970712919752907, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_Color.b
-      value: 0.02352939
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 414970712919752907, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_Color.g
-      value: 0.8627451
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 414970712919752907, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_Color.r
-      value: 0.09217242
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1204746179257966705, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_Name
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7720297918211817441, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7720297918211817441, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -54,15 +54,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7720297918211817441, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 7720297918211817441, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1
+      value: 0.9375
       objectReference: {fileID: 0}
     - target: {fileID: 8024576117462904613, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: info.eventName
       value: 3.1 Good
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698564540517329787, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8698564540517329787, guid: c741a2ed784948a49af40a47ab1b3820, type: 3}
       propertyPath: m_LocalPosition.x
