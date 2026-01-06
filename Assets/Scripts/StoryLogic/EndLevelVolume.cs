@@ -31,8 +31,9 @@ public class EndLevelVolume : StoryEventVolume
             //assume story engine handles duplicate tags
             trigger.Trigger(tag.info);
 
+            TextManager.Instance?.CompleteCurrentPrompt();
             //then tell to load next level
-            gameManager.NextLevel();
+            gameManager.NextLevel(tag.info.eventName);
         }
     }
 }

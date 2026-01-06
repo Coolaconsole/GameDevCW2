@@ -18,6 +18,7 @@ public class GridbasedMovementScript : MonoBehaviour
     public bool canTalkTo = false;
     public bool isImmovable = false;
     public List<string> dialogueLines = new List<string>();
+    private int dialogueIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -78,10 +79,13 @@ public class GridbasedMovementScript : MonoBehaviour
                 {
                     if (otherMovement.CanTalkTo() && otherMovement.GetDialogueLines().Count > 0)
                     {
-                        TextManager.Instance.ClosePrompt(); // Close any existing prompts
-                        TextManager.Instance.QueuePrompt(otherMovement.GetDialogueLines()[0]);
-                        otherMovement.DecrementDialogueLines();
-                        Debug.Log("Talking to " + otherMovement.gameObject.name);
+                        if (TextManager.Instance.ClosePrompt()) // Close any existing prompts
+                        {
+                            int index = Math.Min(otherMovement.dialogueIndex, otherMovement.GetDialogueLines().Count - 1);
+                            TextManager.Instance.QueuePrompt(otherMovement.GetDialogueLines()[index]);
+                            otherMovement.NextLine();
+                            Debug.Log("Talking to " + otherMovement.gameObject.name);
+                        }
                         //cannot move into characters
                         canMove = false;
                         break;
@@ -109,10 +113,8 @@ public class GridbasedMovementScript : MonoBehaviour
     public List<string> GetDialogueLines() {
         return dialogueLines;
     }
-    public void DecrementDialogueLines() {
-        if (dialogueLines.Count > 1) {
-            dialogueLines.RemoveAt(0); // Repeat last line if no more lines
-        }
+    public void NextLine() {
+        dialogueIndex++;
     }
 
     //convert direction into a vector - used for moving rb and traces while mainating only cardinal movement

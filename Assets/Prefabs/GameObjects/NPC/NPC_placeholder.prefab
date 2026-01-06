@@ -178,7 +178,4 @@ MonoBehaviour:
   gridSquareDist: 1
   canTalkTo: 1
   isImmovable: 1
-  dialogueLines:
-  - name
-  - next
-  - last
+  dialogueLines: []
