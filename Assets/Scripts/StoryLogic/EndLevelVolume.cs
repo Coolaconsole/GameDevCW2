@@ -33,7 +33,7 @@ public class EndLevelVolume : StoryEventVolume
 
             TextManager.Instance?.CompleteCurrentPrompt();
             //then tell to load next level
-            gameManager.NextLevel();
+            gameManager.NextLevel(tag.info.eventName);
         }
     }
 }

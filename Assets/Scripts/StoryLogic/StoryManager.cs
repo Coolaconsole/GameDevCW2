@@ -68,6 +68,9 @@ public class StoryManager : MonoBehaviour
                 {"3.3 Neutral", false},
                 {"3.3 Evil", false},
                 {"3.3 Good", false},
+                {"Neutral end", false},
+                {"Evil end", false},
+                {"Good end", false},
             };
         }
 

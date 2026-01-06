@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: River
       objectReference: {fileID: 0}
+    - target: {fileID: 7720297918211817441, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720297918211817441, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8698564540517329787, guid: 92ed9e6009dd6694d8de814e9ca6dc75, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

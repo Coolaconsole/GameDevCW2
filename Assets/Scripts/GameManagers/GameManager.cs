@@ -34,29 +34,31 @@ public class GameManager : MonoBehaviour
 
     public void ResetLevel()
     {
+        CurrentSceneName = SceneManager.GetActiveScene().name;
         if (manager != null)
         {
             manager.Reset();
         }
+        Debug.Log(CurrentSceneName);
         SceneManager.LoadScene(CurrentSceneName);
     }
 
-    public void NextLevel()
+    public void NextLevel(string eventName)
     {
         manager.Save();
-        if (manager.getEvent(flag1))
+        if (manager.getEvent(flag1) || eventName == flag1)
         {
-            Debug.Log("flag1");
+            Debug.Log("flag1: " + flag1SceneName);
             SceneManager.LoadScene(flag1SceneName);
         }
-        else if (manager.getEvent(flag2))
+        else if (manager.getEvent(flag2) || eventName == flag2)
         {
-            Debug.Log("flag2");
+            Debug.Log("flag2: " + flag2SceneName);
             SceneManager.LoadScene(flag2SceneName);
         }
         else
         {
-            Debug.Log("else");
+            Debug.Log("else: " + nextSceneName);
             SceneManager.LoadScene(nextSceneName);
         }
     }
