@@ -83,15 +83,7 @@ public class StoryManager : MonoBehaviour
             if (!currentEventFlags[info.eventName])
             {
                 currentEventFlags[info.eventName] = true;
-                switch (info.eventName)
-                {
-                    case "1.1":
-                        TextManager.Instance.QueuePrompt("evilNPC1-hi");
-                        break;
-                    //Handle any special cases for story events here
-                    default:
-                        break;
-                }
+                QueueRevelantPrompt(info.eventName);
                 eventOccured?.Invoke(info.eventName);
             }
         }
@@ -117,6 +109,11 @@ public class StoryManager : MonoBehaviour
     {
         if (savedEventFlags == null) return;
 
+        //Queue the most recent prompt
+        string lastEvent = savedEventFlags.Keys.Reverse().FirstOrDefault(key => savedEventFlags[key]);
+        if (lastEvent != null)
+            lastEvent = "";
+        QueueRevelantPrompt(lastEvent);
         foreach (var key in savedEventFlags.Keys)
         {
             currentEventFlags[key] = savedEventFlags[key];
@@ -129,6 +126,27 @@ public class StoryManager : MonoBehaviour
         foreach (var key in currentEventFlags.Keys)
         {
             savedEventFlags[key] = currentEventFlags[key];
+        }
+    }
+
+    private void QueueRevelantPrompt(string key)
+    {
+        Debug.Log("Resetting prompts for story event");
+        TextManager.Instance?.ClearQueue();
+        switch (key)
+        {
+            case "1.1":
+                TextManager.Instance.QueuePrompt("evilNPC1-hi");
+                break;
+            case "1.2 Neutral":
+                TextManager.Instance.QueuePrompt("goodNPC1-hi");
+                break;
+            case "1.2 Evil":
+                TextManager.Instance.QueuePrompt("goodNPC1-hi");
+                break;
+            //Handle any special cases for story events here
+            default:
+                break;
         }
     }
 }

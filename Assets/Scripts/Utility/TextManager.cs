@@ -15,7 +15,6 @@ public class TextManager : MonoBehaviour
 {
     [Header("Text Settings")]
     [SerializeField] private bool allPromptsPauseGame = false;
-    [SerializeField] private bool eventBasedPromptCompletion = false;
 
     StoryManager sManager;
 
@@ -66,11 +65,16 @@ public class TextManager : MonoBehaviour
         sManager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
         
 
-
+        //Level 1-2
         textPrompts["evilNPC1-hi"] = ("Hey you, come over here. I have something for ya...", new Vector3(-169, -135, 0), null, false);
         textPrompts["evilNPC1-king"] = ("You know... you don't have to ask for a king. We could do better.", new Vector3(-169, -135, 0), null, false);
         textPrompts["evilNPC1-offer"] = ("I took this from the village, Jupiter could be bargained with.", new Vector3(-169, -135, 0), null, false);
         textPrompts["evilNPC1-deal"] = ("Take it with you, Jupiter will give you what you want.", new Vector3(-169, -135, 0), null, true);
+
+        //Level 1-3
+        textPrompts["goodNPC1-hi"] = ("Hi, I'm glad I could catch you. I have a small request.", new Vector3(-230, -169, 0), null, false);
+        textPrompts["goodNPC1-family"] = ("My family is starving, we wrote down a prayer for Jupiter.", new Vector3(-230, -169, 0), null, false);
+        textPrompts["goodNPC1-offer"] = ("Can you please bring it to Jupiter?", new Vector3(-230, -169, 0), null, true);
 
         //Npc who gives you a hammer
         textPrompts["RecieveHammer"] = ("Before you leave, take this!", new Vector3(0, 0, 0), "RecivedHammer", true);
@@ -107,7 +111,7 @@ public class TextManager : MonoBehaviour
         promptQueue.RemoveAt(0);
 
         currentPromptKey = key;
-        eventBasedPromptCompletion = eventBasedCompletion;
+        waitingForEvent = eventBasedCompletion;
         Debug.Log("EventBasedCompletion: " + eventBasedCompletion);
         // currentPromptPausesGame = true; // Currently stay false unless set otherwise
         textBox.SetActive(true);
@@ -244,5 +248,10 @@ public class TextManager : MonoBehaviour
         }
     }
 
-
+    public void ClearQueue()
+    {
+        textBox.SetActive(false);
+        currentPromptKey = "";
+        promptQueue.Clear();
+    }
 }
