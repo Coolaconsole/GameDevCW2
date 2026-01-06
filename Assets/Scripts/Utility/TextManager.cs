@@ -74,7 +74,21 @@ public class TextManager : MonoBehaviour
         //Level 1-3
         textPrompts["goodNPC1-hi"] = ("Hi, I'm glad I could catch you. I have a small request.", new Vector3(-230, -169, 0), null, false);
         textPrompts["goodNPC1-family"] = ("My family is starving, we wrote down a prayer for Jupiter.", new Vector3(-230, -169, 0), null, false);
-        textPrompts["goodNPC1-offer"] = ("Can you please bring it to Jupiter?", new Vector3(-230, -169, 0), null, true);
+        textPrompts["goodNPC1-offer"] = ("Can you please bring it to Jupiter?", new Vector3(-230, -169, 0), "1.3 Spawn", true);
+
+
+
+        //Level 2-1
+        textPrompts["evilNPC2-return"] = ("Hello again, the people of the village will never understand.", new Vector3(-230, -70, 0), null, false);
+        textPrompts["evilNPC2-power"] = ("The position we're in. The power we have...", new Vector3(-230, -70, 0), null, false);
+        textPrompts["evilNPC2-monitor"] = ("Leave that stupid offering behind! Lets go back to Jupiter.", new Vector3(-230, -70, 0), null, false);
+
+        //Level 2-2
+        textPrompts["evilNPC3-steal"] = ("Aha! That food will make a good offering.", new Vector3(200, -150, 0), null, false);
+        textPrompts["evilNPC3-tempt"] = ("Take it... Jupiter will reward us for such an act.", new Vector3(200, -150, 0), null, false);
+        textPrompts["goodNPC2-plead"] = ("Oh hello, it's you. Can you please help me?", new Vector3(200, -150, 0), null, false);
+        textPrompts["goodNPC2-food"] = ("My family is out of food, could you spare some?", new Vector3(200, -150, 0), null, true);
+        textPrompts["goodNPC2-food"] = ("Thank you! I don't have much to pay you back, but I do have this.", new Vector3(200, -150, 0), "2.2 Spawn", false);
 
         //Npc who gives you a hammer
         textPrompts["RecieveHammer"] = ("Before you leave, take this!", new Vector3(0, 0, 0), "RecivedHammer", true);
@@ -238,6 +252,9 @@ public class TextManager : MonoBehaviour
     {
         if (!textBox.activeSelf) return;
         if (!waitingForEvent) return;
+        if (!typingComplete)
+                CompleteInstantly();
+
         Debug.Log("Completing current prompt");
         waitingForEvent = false;
         ClosePrompt();
