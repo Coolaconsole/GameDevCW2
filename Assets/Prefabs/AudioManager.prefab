@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: jump
-    clip: {fileID: 8300000, guid: 35900756b6e63e147a18da89f17bbe44, type: 3}
+    clip: {fileID: 8300000, guid: eea57ff0fa7a78445b29956524b6ca17, type: 3}
   musicTracks:
   - name: village_neutral
     clip: {fileID: 8300000, guid: a403721692a0c6747be0b93be1b3f216, type: 3}
