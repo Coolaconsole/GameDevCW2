@@ -79,7 +79,7 @@ public class TextManager : MonoBehaviour
 
 
         //Level 2-1
-        textPrompts["evilNPC2-return"] = ("Hello again, the people of the village will never understand.", new Vector3(-230, -70, 0), null, false);
+        textPrompts["evilNPC2-return"] = ("Hello again, you did well. Look at us now.", new Vector3(-230, -70, 0), null, false);
         textPrompts["evilNPC2-power"] = ("The position we're in. The power we have...", new Vector3(-230, -70, 0), null, false);
         textPrompts["evilNPC2-monitor"] = ("Leave that stupid offering behind! Lets go back to Jupiter.", new Vector3(-230, -70, 0), null, false);
 
