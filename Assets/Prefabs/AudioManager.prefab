@@ -53,6 +53,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a030d9da9e8b4e844ab020e4d514d212, type: 3}
   - name: click
     clip: {fileID: 8300000, guid: e351494fbd32cfe40a72c1fd8532cf40, type: 3}
+  - name: heron
+    clip: {fileID: 8300000, guid: 52d5f53d5d935d147a1a36025f26c965, type: 3}
   musicTracks:
   - name: village_neutral
     clip: {fileID: 8300000, guid: a403721692a0c6747be0b93be1b3f216, type: 3}

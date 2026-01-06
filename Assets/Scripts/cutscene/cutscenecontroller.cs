@@ -24,4 +24,26 @@ public class cutscenecontroller : MonoBehaviour
             SceneManager.LoadScene("menu");
         }
     }
+
+
+
+    //shouldnt be here but my bad n shi
+
+    private void TriggerCutsceneAudio()
+    {
+        //only trigger if we are in the specific ending scene
+        if (SceneManager.GetActiveScene().name == "neutral end")
+        {
+            // null check the Instance in case the manager didn't load properly
+            if (AudioManager.Instance != null)
+            {
+                
+                AudioManager.Instance.PlaySFX("heron");
+            }
+            else
+            {
+                Debug.LogWarning("AudioManager instance not found for cutscene!");
+            }
+        }
+    }
 }
