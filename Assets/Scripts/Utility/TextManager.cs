@@ -64,6 +64,22 @@ public class TextManager : MonoBehaviour
     {
         sManager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
         
+        //First village dialogue
+        textPrompts["neutralNPC1-hi"] = ("Good morning. It seems there are people gathering in the square.", new Vector3(60, -170, 0), null, false);
+        textPrompts["neutralNPC1-talk"] = ("Talk to other frogs by walking into them. Find out what's up.", new Vector3(60, -170, 0), null, false);
+        textPrompts["neutralNPC1-walk"] = ("Talk with walk. Close text boxes with R.", new Vector3(60, -170, 0), null, false);
+        textPrompts["neutralNPC1-kid"] = ("I'm just a kid, but I want a king.", new Vector3(220, 0, 0), null, false);
+        textPrompts["neutralNPC1-king"] = ("We want a king!\nWe want a king!", new Vector3(220, -40, 0), null, false);
+        textPrompts["neutralNPC1-seem"] = ("Seems everyone wants a king, I dig it.", new Vector3(220, -40, 0), null, false);
+        textPrompts["neutralNPC1-idk"] = ("I don't know what's happening, but I want a king.", new Vector3(65, 65, 0), null, false);
+        textPrompts["neutralNPC1-goodLuck"] = ("Good luck out there, dude. Glad I wasn't chosen.", new Vector3(-245, 10, 0), null, false);
+
+        textPrompts["step-forth"] = ("We need an adventurer to seek Jupiter. We need a king to rule us.", new Vector3(245, 50, 0), null, false);
+        textPrompts["volunteer"] = ("If you wish to volunteer, uhh please step forth... anyone?", new Vector3(245, 50, 0), null, false);
+        textPrompts["callToAction"] = ("Aha! We thank you for your bravery. Please exit the village now.", new Vector3(245, 50, 0), null, false);
+        textPrompts["walk-out"] = ("You! You're going the right way! You shall head out on this quest.", new Vector3(245, 50, 0), null, false);
+        textPrompts["takeThis"] = ("Take this lily pad, surely Jupiter will reward our effort.", new Vector3(245, 50, 0), null, false);
+        textPrompts["level"] = ("This lily pad must be placed at the pedestal at the end of each level.", new Vector3(245, 50, 0), null, false);
 
         //Level 1-2
         textPrompts["evilNPC1-hi"] = ("Hey you, come over here. I have something for ya...", new Vector3(-169, -135, 0), null, false);
