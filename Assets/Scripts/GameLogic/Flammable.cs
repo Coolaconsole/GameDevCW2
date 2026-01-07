@@ -1,40 +1,52 @@
 using UnityEngine;
 
-[RequireComponent (typeof(SpriteRenderer))]
-[RequireComponent (typeof (Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Animator))]
 public class Flammable : MonoBehaviour
 {
-
-    //if the current flammable object is on fire
+    [Header("Fire Settings")]
     public bool isOnFire = false;
-    //if the fire is a source it will never burn out
     public bool isSource = false;
-    //how long the object will burn for before being destroyed
     public float burnTime = 5;
-    //how long into burning that other flammable objects nearby will catch fire
     public float spreadTime = 3;
-    //how many tiles away the fire will spread when spreadTime expires - recomend have equal to grid size
     public float fireRange = 1;
-    //object to replace with when fully burnt - should just be a decal
-    public GameObject burntObject;
 
-    Animator animator;
+    [Header("Visuals")]
+    // This is the "Burnt Tree" prefab in your screenshot
+    public GameObject burntObject; 
+    // This is the "Flame" child object in your screenshot
+    public GameObject fireOverlay; 
 
+    private Animator animator;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// <summary>
+    /// Initializes the component and ensures the overlay is in the correct state.
+    /// </summary>
     void Start()
     {
-        animator = GetComponent<Animator> ();
-        if (!isOnFire) {
+        animator = GetComponent<Animator>();
+
+        // Ensure the fire visual matches our initial isOnFire state
+        if (fireOverlay != null)
+        {
+            fireOverlay.SetActive(isOnFire);
+        }
+
+        // If not on fire, we disable the animator on the main object
+        if (!isOnFire)
+        {
             animator.enabled = false;
         }
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Monitors the burn and spread timers.
+    /// </summary>
     void Update()
     {
         if (isOnFire)
         {
+            // Logic for spreading fire to neighbors
             if (spreadTime <= 0 || isSource)
             {
                 spreadTime = 0;
@@ -45,6 +57,7 @@ public class Flammable : MonoBehaviour
                 spreadTime -= Time.deltaTime;
             }
 
+            // Logic for burning out and being destroyed
             if (!isSource)
             {
                 if (burnTime <= 0)
@@ -60,31 +73,50 @@ public class Flammable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Activates the fire state and shows the animated overlay.
+    /// </summary>
     public void SetOnfire()
     {
+        // Only trigger if not already burning
         if (!isOnFire)
         {
             isOnFire = true;
+            
+            // Enable the main object's animator (if you use it for the log itself)
             animator.enabled = true;
-            //animator.contro
-            //spriteRenderer.sprite = onFireSprite;
+
+            // FIX: This activates the "Flame" child object so it becomes visible
+            if (fireOverlay != null)
+            {
+                fireOverlay.SetActive(true);
+                
+                // If the Flame child has its own Animator, make sure it's enabled
+                Animator overlayAnim = fireOverlay.GetComponent<Animator>();
+                if (overlayAnim != null)
+                {
+                    overlayAnim.enabled = true;
+                }
+            }
         }
     }
 
-    //Spead fire to nearby flammable objects
+    /// <summary>
+    /// Uses a circle overlap to find and ignite nearby flammable objects.
+    /// </summary>
     void SpreadFire()
     {
         ContactFilter2D contactFilter = new ContactFilter2D();
         contactFilter.useTriggers = true;
         Collider2D[] results = new Collider2D[10];
-        Physics2D.OverlapCircle(transform.position, fireRange,contactFilter, results);
+        Physics2D.OverlapCircle(transform.position, fireRange, contactFilter, results);
 
-        foreach(Collider2D collider in results)
-            {
+        foreach (Collider2D collider in results)
+        {
             if (collider != null)
             {
                 Flammable flammable = collider.GetComponentInParent<Flammable>();
-                if (flammable != null)
+                if (flammable != null && !flammable.isOnFire)
                 {
                     flammable.SetOnfire();
                 }
@@ -92,12 +124,14 @@ public class Flammable : MonoBehaviour
         }
     }
 
-    //Destorys the object when the fire has fully burnt out
+    /// <summary>
+    /// Replaces the object with the burnt version and destroys this one.
+    /// </summary>
     void BurnOut()
     {
         if (burntObject != null)
         {
-            Instantiate(burntObject,transform.position, transform.rotation);
+            Instantiate(burntObject, transform.position, transform.rotation);
         }
         Destroy(gameObject);
     }

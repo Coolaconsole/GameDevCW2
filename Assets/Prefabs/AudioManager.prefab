@@ -127,5 +127,7 @@ MonoBehaviour:
     trackName: world_neutral
   - sceneName: Level 3.3
     trackName: world_neutral
+  - sceneName: menu
+    trackName: world_good
   initialPoolSize: 10
   defaultMasterVolume: 0.5

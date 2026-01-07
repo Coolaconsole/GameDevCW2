@@ -8,13 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 987387833981460685, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1087817532160665831, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1087817532160665831, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1087817532160665831, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_LocalScale.z
@@ -78,16 +82,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4994715558474163274, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.3333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4994715558474163274, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6131759867496915572, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8407099408872834079, guid: ac7a49a03b47e52409cd4f2609335ea5, type: 3}
+      objectReference: {fileID: -4589374451575535494, guid: ac7a49a03b47e52409cd4f2609335ea5, type: 3}
     - target: {fileID: 6310698948952782409, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -108,10 +112,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7134392867132424914, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 7230028976897802929, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: isOnFire
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7230028976897802929, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
+      propertyPath: fireOverlay
+      value: 
+      objectReference: {fileID: 4297416382430105783}
     - target: {fileID: 8120615315743962251, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -150,3 +162,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
+--- !u!1 &4297416382430105783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 605404335038528782, guid: 8e9b949d48b5dd44b9ff277e6332f027, type: 3}
+  m_PrefabInstance: {fileID: 3730574124612005305}
+  m_PrefabAsset: {fileID: 0}
