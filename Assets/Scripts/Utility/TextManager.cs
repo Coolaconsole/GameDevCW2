@@ -286,7 +286,7 @@ public class TextManager : MonoBehaviour
         textPrompts["jupiter-evil3"] = ("You could be this king they want. The choice is yours.", new Vector3(225, 95, 0), null, false);
         textPrompts["jupiter-evil4"] = ("Place the offering in the podium for your request:\n<color=yellow>A king</color> - <color=red>Become the king</color>", new Vector3(0, -50, 0), null, false);
         
-        //First village dialogue
+        //Second village neutral dialogue
         textPrompts["v2n-hi"] = ("Oh hey, you're back. People are gathering in the square again.", new Vector3(60, -170, 0), null, false);
         textPrompts["v2n-talk"] = ("Am I repeating myself? Oh well.", new Vector3(60, -170, 0), null, false);
         textPrompts["v2n-walk"] = ("Just to remind you: Talk with walk. Close text boxes with R.", new Vector3(60, -170, 0), null, false);
@@ -302,8 +302,22 @@ public class TextManager : MonoBehaviour
         textPrompts["v2n-d4"] = ("Off you go!", new Vector3(245, 50, 0), null, false);
         textPrompts["v2n-d5"] = ("I've never been hungry, so we clearly don't have a food shortage.", new Vector3(245, 50, 0), null, false);
 
+        //Second village evil dialogue
+        textPrompts["v2e-hi"] = ("Oh, it's the new king. Big Frog wants you.", new Vector3(60, -170, 0), null, false);
+        textPrompts["v2e-kid"] = ("I want to be a king too! I'm smart enough clearly.", new Vector3(220, 0, 0), null, false);
+        textPrompts["v2e-king"] = ("We want a new king!\nWe want a new king!", new Vector3(220, -40, 0), null, false);
+        textPrompts["v2e-seem"] = ("Seems everyone hates you. Bit selfish becoming the king.", new Vector3(220, -40, 0), null, false);
+        textPrompts["v2e-idk"] = ("I don't even know why you're the king now.", new Vector3(65, 65, 0), null, false);
+        textPrompts["v2e-goodLuck"] = ("I actually have faith you'll find a good new king.", new Vector3(-245, 10, 0), null, false);
         
-        
+        //Second village good dialogue
+        textPrompts["v2g-hi"] = ("You're back. But you didn't get us a king.", new Vector3(60, -170, 0), null, false);
+        textPrompts["v2g-kid"] = ("I had a really big breakfast, it was cool.", new Vector3(220, 0, 0), null, false);
+        textPrompts["v2g-king"] = ("You didn't get us a new king!", new Vector3(220, -40, 0), null, false);
+        textPrompts["v2g-seem"] = ("Seems people aren't happy with you even though we can eat now.", new Vector3(220, -40, 0), null, false);
+        textPrompts["v2g-idk"] = ("I don't know why people aren't happy with the food, but I agree.", new Vector3(65, 65, 0), null, false);
+        textPrompts["v2g-goodLuck"] = ("Sorry you'll have to give away the food you got us.", new Vector3(-245, 10, 0), null, false);
+
         //Level 2-1
         textPrompts["evilNPC2-return"] = ("Hello again, you did well. Look at us now.", new Vector3(-230, -70, 0), null, false);
         textPrompts["evilNPC2-power"] = ("The position we're in. The power we have...", new Vector3(-230, -70, 0), null, false);
@@ -333,7 +347,43 @@ public class TextManager : MonoBehaviour
         textPrompts["jupiter2-evil2"] = ("They want a different ruler? You should teach them a lesson.", new Vector3(-225, 95, 0), null, false);
         textPrompts["jupiter2-evil3"] = ("I can offer you a <color=yellow>commanding eel</color>, or <color=red>the power of fire</color>.", new Vector3(225, 95, 0), null, false);
         textPrompts["jupiter2-evil4"] = ("Place the offering in the podium for your request:\n<color=yellow>The eel</color> - <color=red>Power</color>", new Vector3(0, -50, 0), null, false);
+
+        //Third village neutral dialogue
+        textPrompts["v3n-hi"] = ("Welcome back, people don't like the eel as a king.", new Vector3(60, -170, 0), null, false);
+        textPrompts["v3n-kid"] = ("The new king's slimy and silly.", new Vector3(220, 0, 0), null, false);
+        textPrompts["v3n-king"] = ("This new king's rubbish! It's so wiggly!", new Vector3(220, -40, 0), null, false);
+        textPrompts["v3n-seem"] = ("People seem upset at the new king, you should go get another.", new Vector3(220, -40, 0), null, false);
+        textPrompts["v3n-idk"] = ("I don't know what everyone actually wants as a king.", new Vector3(65, 65, 0), null, false);
+        textPrompts["v3n-goodLuck"] = ("Good luck out there.", new Vector3(-245, 10, 0), null, false);
+
+        textPrompts["v3n-d1"] = ("Hey, we want a more powerful king!", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3n-d2"] = ("Go to Jupiter again. Give him our coolest statue.", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3n-d3"] = ("We want a better king!", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3n-d4"] = ("Surely then he'll give us what we want.", new Vector3(245, 50, 0), null, false);
+
+        //Third village evil dialogue
+        textPrompts["v3e-hi"] = ("They're back, everyone! They're the reason the forest is burning!", new Vector3(60, -170, 0), null, false);
+        textPrompts["v3e-kid"] = ("I think you could still be nice!", new Vector3(220, 0, 0), null, false);
+        textPrompts["v3e-king"] = ("Please don't hurt us!", new Vector3(220, -40, 0), null, false);
+        textPrompts["v3e-goodLuck"] = ("Please resolve this mess.", new Vector3(-245, 10, 0), null, false);
         
+        textPrompts["v3e-d1"] = ("Hey! We need a better king, we don't want you.", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3e-d2"] = ("Jupiter wants a sacrifice, please be off and take them to Jupiter.", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3e-d3"] = ("You'll need to take it to the end of each level.", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3e-d4"] = ("Please leave!", new Vector3(245, 50, 0), null, false);
+
+        //Third village good dialogue
+        textPrompts["v3g-hi"] = ("Oh hey, you're back. People aren't happy with the new king.", new Vector3(60, -170, 0), null, false);
+        textPrompts["v3g-kid"] = ("The new king fed me flies, it was weird.", new Vector3(220, 0, 0), null, false);
+        textPrompts["v3g-king"] = ("This new king's too weak.", new Vector3(220, -40, 0), null, false);
+        textPrompts["v3g-seem"] = ("It seems like he helps us but he looks weird.", new Vector3(220, -40, 0), null, false);
+        textPrompts["v3g-idk"] = ("I don't know why our new king's a spider.", new Vector3(65, 65, 0), null, false);
+        textPrompts["v3g-goodLuck"] = ("Good luck out there.", new Vector3(-245, 10, 0), null, false);
+
+        textPrompts["v3g-d1"] = ("Hey, we want a powerful king!", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3g-d2"] = ("Go to Jupiter again. Give him all our riches.", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3g-d3"] = ("We want a powerful king!", new Vector3(245, 50, 0), null, false);
+        textPrompts["v3g-d4"] = ("Surely then he'll give us what we want.", new Vector3(245, 50, 0), null, false);
 
         //Jupiter Dialogue
         textPrompts["jupiter3-neutral1"] = ("You. This is the last request I'll deal with.", new Vector3(0, 30, 0), null, false);
@@ -351,8 +401,9 @@ public class TextManager : MonoBehaviour
         textPrompts["jupiter3-evil3"] = ("Will you <color=yellow>share</color> this power with the people, or <color=red>keep it for yourself</color>?", new Vector3(225, 95, 0), null, false);
         textPrompts["jupiter3-evil4"] = ("<color=yellow>Wish for a ruler</color> - <color=red>Wish for infinite power</color>", new Vector3(0, -50, 0), null, false);
         
+        textPrompts["GoAway"] = ("You can go now, we'll keep asking for kings.", new Vector3(0, 0, 0), null, false);
 
         //Npc who gives you a hammer
-        textPrompts["ReceiveHammer"] = ("Before you leave, take this!", new Vector3(0, 0, 0), "ReceivedHammer", true);
+        textPrompts["ReceiveHammer"] = ("Before you leave, take this hammer! Press E on red objects to break.", new Vector3(0, 0, 0), "ReceivedHammer", true);
     }
 }
