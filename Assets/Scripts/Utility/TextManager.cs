@@ -270,8 +270,24 @@ public class TextManager : MonoBehaviour
         textPrompts["goodNPC1-family"] = ("My family is starving, we wrote down a prayer for Jupiter.", new Vector3(-230, -169, 0), null, false);
         textPrompts["goodNPC1-offer"] = ("Can you please bring it to Jupiter?", new Vector3(-230, -169, 0), "1.3 Spawn", true);
 
+        //Jupiter Dialogue
+        textPrompts["jupiter-neutral1"] = ("Ah, an adventurer. How quaint. What is it you seek?", new Vector3(0, 30, 0), null, false);
+        textPrompts["jupiter-neutral2"] = ("A king you say? Interesting... I can make it happen.", new Vector3(225, 95, 0), null, false);
+        textPrompts["jupiter-neutral3"] = ("I grant you this log. It will tower over the land.", new Vector3(-225, 95, 0), null, false);
+        textPrompts["jupiter-neutral4"] = ("Place the offering on the podium, and it shall be done.", new Vector3(0, -50, 0), null, false);
 
+        textPrompts["jupiter-good1"] = ("Ah, an adventurer. What is it? You seem troubled.", new Vector3(0, 30, 0), null, false);
+        textPrompts["jupiter-good2"] = ("The village want a king, but they can't sustain themselves?", new Vector3(225, 95, 0), null, false);
+        textPrompts["jupiter-good3"] = ("Interesting... that's a lot to ask for. I can fulfill one request.", new Vector3(-225, 95, 0), null, false);
+        textPrompts["jupiter-good4"] = ("Place the offering in the podium for your request:\n<color=yellow>A ruler</color> - <color=green>Plentiful harvests</color>", new Vector3(0, -50, 0), null, false);
 
+        textPrompts["jupiter-evil1"] = ("Ah, an adventurer. How quaint. What is this you've brought?", new Vector3(0, 30, 0), null, false);
+        textPrompts["jupiter-evil2"] = ("Oh, a request for a king. Or is this something else?", new Vector3(-225, 95, 0), null, false);
+        textPrompts["jupiter-evil3"] = ("You could be this king they want. The choice is yours.", new Vector3(225, 95, 0), null, false);
+        textPrompts["jupiter-evil4"] = ("Place the offering in the podium for your request:\n<color=yellow>A king</color> - <color=red>Become the king</color>", new Vector3(0, -50, 0), null, false);
+        
+        
+        
         //Level 2-1
         textPrompts["evilNPC2-return"] = ("Hello again, you did well. Look at us now.", new Vector3(-230, -70, 0), null, false);
         textPrompts["evilNPC2-power"] = ("The position we're in. The power we have...", new Vector3(-230, -70, 0), null, false);
@@ -285,6 +301,25 @@ public class TextManager : MonoBehaviour
         textPrompts["goodNPC2-plead"] = ("Oh hello, it's you. Can you please help me?", new Vector3(-240, 60, 0), null, false);
         textPrompts["goodNPC2-food"] = ("My family is out of food, could you spare some?", new Vector3(-240, 60, 0), null, true);
         textPrompts["goodNPC2-payment"] = ("Thank you! I don't have much to pay you back, but I do have this.", new Vector3(-240, 60, 0), null, false);
+
+        //Jupiter Dialogue
+        textPrompts["jupiter2-neutral1"] = ("Ah, an adventurer. How quaint. What is it you seek?", new Vector3(0, 30, 0), null, false);
+        textPrompts["jupiter2-neutral2"] = ("A king you say? Interesting... I can make it happen.", new Vector3(225, 95, 0), null, false);
+        textPrompts["jupiter2-neutral3"] = ("I grant you this log. It will tower over the land.", new Vector3(-225, 95, 0), null, false);
+        textPrompts["jupiter2-neutral4"] = ("Place the offering on the podium, and it shall be done.", new Vector3(0, -50, 0), null, false);
+
+        textPrompts["jupiter2-good1"] = ("Ah, an adventurer. What is it? You seem troubled.", new Vector3(0, 30, 0), null, false);
+        textPrompts["jupiter2-good2"] = ("The village want a king, but they can't sustain themselves?", new Vector3(225, 95, 0), null, false);
+        textPrompts["jupiter2-good3"] = ("Interesting... that's a lot to ask for. I can fulfill one request.", new Vector3(-225, 95, 0), null, false);
+        textPrompts["jupiter2-good4"] = ("Place the offering in the podium for your request:\n<color=yellow>A ruler</color> - <color=green>Plentiful harvests</color>", new Vector3(0, -50, 0), null, false);
+
+        textPrompts["jupiter2-evil1"] = ("Ah, an adventurer. How quaint. What is this you've brought?", new Vector3(0, 30, 0), null, false);
+        textPrompts["jupiter2-evil2"] = ("Oh, a request for a king. Or is this something else?", new Vector3(-225, 95, 0), null, false);
+        textPrompts["jupiter2-evil3"] = ("You could be this king they want. The choice is yours.", new Vector3(225, 95, 0), null, false);
+        textPrompts["jupiter2-evil4"] = ("Place the offering in the podium for your request:\n<color=yellow>A king</color> - <color=red>Become the king</color>", new Vector3(0, -50, 0), null, false);
+        
+
+        
 
         //Npc who gives you a hammer
         textPrompts["RecieveHammer"] = ("Before you leave, take this!", new Vector3(0, 0, 0), "RecivedHammer", true);
