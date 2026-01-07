@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
     public int initialPoolSize = 10;
     public float defaultMasterVolume = 0.5f;
 
-    // Dictionaries for O(1) fast lookup
+    // Dictionaries 
     private Dictionary<string, AudioClip> soundDict = new();
     private Dictionary<string, AudioClip> musicDict = new();
 

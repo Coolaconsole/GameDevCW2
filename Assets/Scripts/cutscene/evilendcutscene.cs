@@ -13,9 +13,9 @@ public class WorldTransitionCutscene : MonoBehaviour
     public float jupiterStartDelay = 1.0f; // Delay after player starts moving
     public float postSequenceWait = 2f;
 
-    /// <summary>
+
     /// Triggers the cutscene sequence on Start.
-    /// </summary>
+
     void Start()
     {
         if (playerObject != null && jupiterObject != null)
@@ -24,15 +24,15 @@ public class WorldTransitionCutscene : MonoBehaviour
         }
     }
 
-    /// <summary>
+
     /// Handles the staggered movement: Player moves, Jupiter waits 1s then moves, then Jupiter is deleted.
-    /// </summary>
+
     IEnumerator CutsceneSequence()
     {
-        // 1. Initial wait before anything happens
+        // Initial wait before anything happens
         yield return new WaitForSeconds(initialWait);
 
-        // 2. Define Start and End positions
+        // Define Start and End positions
         // Player moves 8 blocks up now (9 - 1)
         Vector3 playerStart = playerObject.transform.position;
         Vector3 playerEnd = playerStart + new Vector3(0, 8, 0);
@@ -42,7 +42,7 @@ public class WorldTransitionCutscene : MonoBehaviour
 
         float elapsedTime = 0;
 
-        // 3. The main movement loop
+        // The main movement loop
         // The loop continues until the longest action (Jupiter's delayed finish) is done
         while (elapsedTime < (slideDuration + jupiterStartDelay))
         {
@@ -76,7 +76,7 @@ public class WorldTransitionCutscene : MonoBehaviour
             yield return null; // Wait for next frame
         }
 
-        // 4. Ensure final snapping and orientation lock
+        // Ensure final snapping and orientation lock
         playerObject.transform.position = playerEnd;
         if (jupiterObject != null)
         {
@@ -84,7 +84,7 @@ public class WorldTransitionCutscene : MonoBehaviour
             jupiterObject.transform.rotation = Quaternion.identity;
         }
 
-        // 5. Final wait and cleanup
+        // Final wait and cleanup
         yield return new WaitForSeconds(postSequenceWait);
 
         if (jupiterObject != null)

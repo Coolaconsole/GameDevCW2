@@ -19,9 +19,9 @@ public class Flammable : MonoBehaviour
 
     private Animator animator;
 
-    /// <summary>
+
     /// Initializes the component and ensures the overlay is in the correct state.
-    /// </summary>
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -39,9 +39,8 @@ public class Flammable : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Monitors the burn and spread timers.
-    /// </summary>
+ 
     void Update()
     {
         if (isOnFire)
@@ -73,9 +72,9 @@ public class Flammable : MonoBehaviour
         }
     }
 
-    /// <summary>
+
     /// Activates the fire state and shows the animated overlay.
-    /// </summary>
+  
     public void SetOnfire()
     {
         // Only trigger if not already burning
@@ -86,7 +85,7 @@ public class Flammable : MonoBehaviour
             // Enable the main object's animator (if you use it for the log itself)
             animator.enabled = true;
 
-            // FIX: This activates the "Flame" child object so it becomes visible
+            // This activates the "Flame" child object so it becomes visible
             if (fireOverlay != null)
             {
                 fireOverlay.SetActive(true);
@@ -101,9 +100,9 @@ public class Flammable : MonoBehaviour
         }
     }
 
-    /// <summary>
+
     /// Uses a circle overlap to find and ignite nearby flammable objects.
-    /// </summary>
+
     void SpreadFire()
     {
         ContactFilter2D contactFilter = new ContactFilter2D();
@@ -124,9 +123,8 @@ public class Flammable : MonoBehaviour
         }
     }
 
-    /// <summary>
     /// Replaces the object with the burnt version and destroys this one.
-    /// </summary>
+
     void BurnOut()
     {
         if (burntObject != null)
