@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 3665039576292750486, guid: 76df55c9b73c7f745890da8bd6aa7c2c, type: 3}
     - target: {fileID: 313255634503466387, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
       propertyPath: m_Name
-      value: BridgeUp
+      value: Bridge
       objectReference: {fileID: 0}
     - target: {fileID: 823119962544425541, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
       propertyPath: m_IsTrigger
@@ -114,6 +114,18 @@ PrefabInstance:
     - target: {fileID: 823119962544425541, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.7708333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061841624533368697, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061841624533368697, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061841624533368697, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5245827539249269685, guid: 072681b97f3436b4b9f69295abab9bc8, type: 3}
       propertyPath: m_Sprite
