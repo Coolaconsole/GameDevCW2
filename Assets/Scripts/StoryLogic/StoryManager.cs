@@ -154,7 +154,8 @@ public class StoryManager : MonoBehaviour
                 TextManager.Instance.QueuePrompt("goodNPC1-offer");
                 break;
             case "2 Offering":
-                TextManager.Instance.QueuePrompt("evilNPC2-return");
+                if (getEvent("Ask rich"))
+                    TextManager.Instance.QueuePrompt("evilNPC2-return");
                 break;
             case "2.1 NoOffering":
                 TextManager.Instance.QueuePrompt("evilNPC3-steal");

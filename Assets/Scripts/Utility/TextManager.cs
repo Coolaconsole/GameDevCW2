@@ -286,6 +286,22 @@ public class TextManager : MonoBehaviour
         textPrompts["jupiter-evil3"] = ("You could be this king they want. The choice is yours.", new Vector3(225, 95, 0), null, false);
         textPrompts["jupiter-evil4"] = ("Place the offering in the podium for your request:\n<color=yellow>A king</color> - <color=red>Become the king</color>", new Vector3(0, -50, 0), null, false);
         
+        //First village dialogue
+        textPrompts["v2n-hi"] = ("Oh hey, you're back. People are gathering in the square again.", new Vector3(60, -170, 0), null, false);
+        textPrompts["v2n-talk"] = ("Am I repeating myself? Oh well.", new Vector3(60, -170, 0), null, false);
+        textPrompts["v2n-walk"] = ("Just to remind you: Talk with walk. Close text boxes with R.", new Vector3(60, -170, 0), null, false);
+        textPrompts["v2n-kid"] = ("I jumped off the new king, but I landed just fine!", new Vector3(220, 0, 0), null, false);
+        textPrompts["v2n-king"] = ("This new king's rubbish! It's just a log!", new Vector3(220, -40, 0), null, false);
+        textPrompts["v2n-seem"] = ("People seem angry at you dude, better head back out.", new Vector3(220, -40, 0), null, false);
+        textPrompts["v2n-idk"] = ("I don't know what you did wrong, but Big Frog wants you.", new Vector3(65, 65, 0), null, false);
+        textPrompts["v2n-goodLuck"] = ("Maybe get us a proper king next time.", new Vector3(-245, 10, 0), null, false);
+
+        textPrompts["v2n-d1"] = ("You again! We want a better king, come here.", new Vector3(245, 50, 0), null, false);
+        textPrompts["v2n-d2"] = ("A food offering is more likely to work. Take it to Jupiter!", new Vector3(245, 50, 0), null, false);
+        textPrompts["v2n-d3"] = ("This offering works the same as the lily pad, but it's bigger.", new Vector3(245, 50, 0), null, false);
+        textPrompts["v2n-d4"] = ("Off you go!", new Vector3(245, 50, 0), null, false);
+        textPrompts["v2n-d5"] = ("I've never been hungry, so we clearly don't have a food shortage.", new Vector3(245, 50, 0), null, false);
+
         
         
         //Level 2-1
