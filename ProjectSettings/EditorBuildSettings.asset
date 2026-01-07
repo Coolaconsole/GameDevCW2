@@ -87,6 +87,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EndCutscenes/good end.unity
     guid: 35d7a0c8d89dfcd4591f6b4a3e3d2a21
   - enabled: 1
+    path: Assets/Scenes/EndCutscenes/evil end.unity
+    guid: 73124e0db0b39b343ba719d9c9c6dae8
+  - enabled: 1
     path: Assets/Scenes/EndCutscenes/neutral end.unity
     guid: 3e5812033307d3549b8677532c990cec
   m_configObjects:
