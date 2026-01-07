@@ -51,10 +51,10 @@ public class StoryManager : MonoBehaviour
                 {"2.2 Neutral", false},
                 {"2.2 Evil", false},
                 {"2.2 Good", false},
-                {"RecivedFire", false},
+                {"ReceivedFire", false},
                 {"Eel", false},
                 {"Spider", false},
-                {"RecivedHammer", false},
+                {"ReceivedHammer", false},
                 {"3 Neutral", false},
                 {"3 Evil", false},
                 {"3 Good", false},
@@ -158,6 +158,9 @@ public class StoryManager : MonoBehaviour
                 break;
             case "2.1 NoOffering":
                 TextManager.Instance.QueuePrompt("evilNPC3-steal");
+                break;
+            case "ReceivedHammer":
+                TextManager.Instance.QueuePrompt("ReceiveHammer");
                 break;
             //Handle any special cases for story events here
             default:

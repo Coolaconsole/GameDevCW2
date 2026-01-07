@@ -36,8 +36,8 @@ public class PlayerInput : MonoBehaviour
         if (manager != null)
         {
             //bind delegate
-            hammer.enabled = manager.getEvent("RecivedHammer");
-            fire.enabled = manager.getEvent("RecivedFire");
+            hammer.enabled = manager.getEvent("ReceivedHammer");
+            fire.enabled = manager.getEvent("ReceivedFire");
         }
         else
         {
