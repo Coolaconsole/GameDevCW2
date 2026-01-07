@@ -171,6 +171,7 @@ public class StoryManager : MonoBehaviour
                 break;
             //Handle any special cases for story events here
             default:
+                TextManager.Instance.ClearQueue();
                 break;
         }
     }
