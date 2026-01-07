@@ -145,21 +145,26 @@ public class AudioManager : MonoBehaviour
  
     /// Plays an SFX by name. Includes optional pitch randomization to prevent robotic sounds.
 
-    public void PlaySFX(string name, float volume = 0.1f, float minPitch = 0.75f, float maxPitch = 1.25f)
+  public void PlaySFX(string name, float volume = 0.1f, float minPitch = 0.75f, float maxPitch = 1.25f)
+{
+    // Force the search term to lowercase to match the dictionary
+    string searchKey = name.ToLower().Trim();
+
+    if (soundDict.TryGetValue(searchKey, out var clip))
     {
-        if (soundDict.TryGetValue(name, out var clip))
-        {
-            var src = GetAvailableSource();
-            src.clip = clip;
-            src.pitch = Random.Range(minPitch, maxPitch);
-            src.volume = volume;
-            src.Play();
-        }
-        else
-        {
-            Debug.LogWarning($"AudioManager: SFX '{name}' not found!");
-        }
+        var src = GetAvailableSource();
+        src.clip = clip;
+        src.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+        src.volume = volume;
+        src.Play();
     }
+    else
+    {
+        // This will print every key currently inside the dictionary so you can compare
+        string allKeys = string.Join(", ", soundDict.Keys);
+        Debug.LogWarning($"AudioManager: '{searchKey}' not found! Available keys: [{allKeys}]");
+    }
+}
 
 
     /// Plays background music by name. Automatically stops the previous track.

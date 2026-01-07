@@ -1,6 +1,7 @@
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
+[RequireComponent (typeof(Animator))]
 public class Pusher : MonoBehaviour
 {
     //How far it should try to push
@@ -8,6 +9,7 @@ public class Pusher : MonoBehaviour
     //How often it should try to push
     public float pushCooldownTime = 1;
 
+    Animator animator;
     float pushCooldown;
 
     Vector2 pushVector;
@@ -15,6 +17,9 @@ public class Pusher : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.Play("idle");
+
         switch (transform.eulerAngles.z)
         {
             case 0:
@@ -61,6 +66,7 @@ public class Pusher : MonoBehaviour
                     if (mover != null)
                     {
                         mover.Move(pushDirection);
+                        animator.Play("push");
                     }
                 }
             }
