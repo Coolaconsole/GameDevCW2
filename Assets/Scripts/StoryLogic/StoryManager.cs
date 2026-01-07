@@ -159,6 +159,9 @@ public class StoryManager : MonoBehaviour
             case "2.1 NoOffering":
                 TextManager.Instance.QueuePrompt("evilNPC3-steal");
                 break;
+            case "2.2 Steal":
+                TextManager.Instance.QueuePrompt("goodNPC2-stolen");
+                break;
             case "ReceivedHammer":
                 TextManager.Instance.QueuePrompt("ReceiveHammer");
                 break;
