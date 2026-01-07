@@ -401,7 +401,9 @@ public class TextManager : MonoBehaviour
         textPrompts["jupiter3-evil3"] = ("Will you <color=yellow>share</color> this power with the people, or <color=red>keep it for yourself</color>?", new Vector3(225, 95, 0), null, false);
         textPrompts["jupiter3-evil4"] = ("<color=yellow>Wish for a ruler</color> - <color=red>Wish for infinite power</color>", new Vector3(0, -50, 0), null, false);
         
+        textPrompts["Finale"] = ("You're free from the village now. Well done.", new Vector3(0, 0, 0), null, false);
         textPrompts["GoAway"] = ("You can go now, we'll keep asking for kings.", new Vector3(0, 0, 0), null, false);
+        textPrompts["Help"] = ("Ahh the new king's scary!\nHe's so scary!\nHelp help.", new Vector3(0, 0, 0), null, false);
 
         //Npc who gives you a hammer
         textPrompts["ReceiveHammer"] = ("Before you leave, take this hammer! Press E on red objects to break.", new Vector3(0, 0, 0), "ReceivedHammer", true);
