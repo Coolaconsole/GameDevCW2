@@ -12,6 +12,12 @@ public class menumanager : MonoBehaviour
     {
         PlayGameButton.onClick.AddListener(StartGame);
         QuitGameButton.onClick.AddListener(Quit);
+
+        StoryManager manager = (StoryManager)FindAnyObjectByType(typeof(StoryManager));
+        if (manager != null)
+        {
+            Destroy(manager.gameObject);
+        }
     }
 
     void StartGame()
