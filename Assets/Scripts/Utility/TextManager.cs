@@ -294,7 +294,7 @@ public class TextManager : MonoBehaviour
         textPrompts["evilNPC2-monitor"] = ("Leave that stupid offering behind! Lets go back to Jupiter.", new Vector3(-230, -70, 0), null, false);
 
         //Level 2-2
-        textPrompts["evilNPC3-steal"] = ("Aha! That food will make a good offering.", new Vector3(225, 40, 0), null, false);
+        textPrompts["evilNPC3-steal"] = ("Aha! That money will make a good offering.", new Vector3(225, 40, 0), null, false);
         textPrompts["evilNPC3-tempt"] = ("Take it... Jupiter will reward us for such an act.", new Vector3(225, 40, 0), null, false);
         textPrompts["goodNPC2-stolen"] = ("Hey! Please don't, that's all I have left.", new Vector3(-240, 60, 0), null, true);
 
